@@ -1,0 +1,38 @@
+query Countries {
+  countries {
+    name
+    id
+    emoji
+    continent {
+      name
+      id
+    }
+    code
+  }
+}
+
+query Country($code: String!) {
+  country(code: $code) {
+    name
+    id
+    emoji
+    code
+    continent {
+      name
+      id
+    }
+  }
+}
+
+mutation AddCountry($data: NewCountryInput!) {
+  addCountry(data: $data) {
+    name
+    emoji
+    code
+    continent {
+      name
+      id
+    }
+    id
+  }
+}

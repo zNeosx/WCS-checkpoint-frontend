@@ -93,11 +93,13 @@ const CountryAddForm = () => {
         );
       }
 
+      // manage continent value linked to ObjectId typing from backend
       if (graphQLErrors.message.includes('data.continent.id')) {
         form.setError('continent', {
           message: 'Continent is required',
         });
       }
+
       toast.error('An error is occured', {
         style: {
           color: 'red',
